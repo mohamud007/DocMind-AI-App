@@ -1,0 +1,4 @@
+Invoice Number: INV-1001
+Vendor: ABC Office Supplies
+Total Amount: 12500.00
+Purchase Order: PO-5001

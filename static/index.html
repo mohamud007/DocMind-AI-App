@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111827">
+
+    <title>DocuMind AI | Document Intelligence</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <span class="brand-icon">✦</span>
+            <span>DocuMind <strong>AI</strong></span>
+        </div>
+
+        <div class="sidebar-section">
+            <p class="nav-label">WORKSPACE</p>
+
+            <a href="#dashboard" class="nav-item active">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="#upload" class="nav-item">
+                <span>↑</span> Upload Documents
+            </a>
+
+            <a href="#search" class="nav-item">
+                <span>⌕</span> Semantic Search
+            </a>
+
+            <a href="#ask" class="nav-item">
+                <span>✧</span> AI Assistant
+            </a>
+
+            <a href="#anomalies" class="nav-item">
+                <span>◈</span> Anomaly Detection
+            </a>
+        </div>
+
+        <div class="sidebar-bottom">
+            <div class="connection-indicator">
+                <span class="status-dot"></span>
+                <span>API Connection</span>
+            </div>
+            <small id="connectionStatus">Checking...</small>
+        </div>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div class="header-content">
+                <p class="eyebrow">INTELLIGENT DOCUMENT PROCESSING</p>
+
+                <h1>Document Intelligence Dashboard</h1>
+
+                <p class="subtitle">
+                    Analyze invoices, detect risks and get AI-powered insights.
+                </p>
+            </div>
+
+            <div class="profile">DM</div>
+
+        </header>
+
+
+        <!-- DASHBOARD -->
+
+        <section id="dashboard">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Overview</h2>
+                    <p class="section-description">
+                        Monitor your document processing system.
+                    </p>
+                </div>
+
+            <button class="secondary-btn" id="refreshDashboard">
+    ↻ Refresh Dashboard
+</button>
+            </div>
+
+
+            <!-- SUMMARY CARDS -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span class="stat-icon blue-icon">▤</span>
+                        <span class="stat-label">SYSTEM</span>
+                    </div>
+
+                    <p>API Status</p>
+                    <h2 id="systemStatus">Checking...</h2>
+                    <small>Backend connection</small>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span class="stat-icon purple-icon">▧</span>
+                        <span class="stat-label">DATABASE</span>
+                    </div>
+
+                    <p>Total Invoices</p>
+                    <h2 id="invoiceCount">Loading...</h2>
+                    <small>Stored in MySQL</small>
+                </div>
+
+
+                <div class="stat-card high-card">
+                    <div class="stat-top">
+                        <span class="stat-icon red-icon">!</span>
+                        <span class="stat-label">CRITICAL</span>
+                    </div>
+
+                    <p>High Risk</p>
+                    <h2 id="highRiskCount">0</h2>
+                    <small>Requires attention</small>
+                </div>
+
+
+                <div class="stat-card medium-card">
+                    <div class="stat-top">
+                        <span class="stat-icon orange-icon">◷</span>
+                        <span class="stat-label">WARNING</span>
+                    </div>
+
+                    <p>Medium Risk</p>
+                    <h2 id="mediumRiskCount">0</h2>
+                    <small>Needs review</small>
+                </div>
+
+
+                <div class="stat-card low-card">
+                    <div class="stat-top">
+                        <span class="stat-icon green-icon">✓</span>
+                        <span class="stat-label">SAFE</span>
+                    </div>
+
+                    <p>Low Risk</p>
+                    <h2 id="lowRiskCount">0</h2>
+                    <small>No major issues</small>
+                </div>
+
+            </div>
+
+
+            <!-- STORED INVOICES -->
+
+            <div class="panel invoice-panel">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Stored Invoices</h2>
+                        <p class="subtitle">
+                            Invoice records retrieved from your MySQL database.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="invoiceList" class="result-box">
+                    Loading invoices...
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DOCUMENT UPLOAD -->
+
+        <section id="upload" class="panel">
+
+            <div class="panel-heading">
+                <div class="panel-icon upload-panel-icon">↑</div>
+
+                <div>
+                    <h2>Upload Document</h2>
+                    <p class="subtitle">
+                        Upload an invoice for automated processing and risk analysis.
+                    </p>
+                </div>
+            </div>
+
+
+            <form id="uploadForm">
+
+                <label class="upload-area" for="documentFile">
+
+                    <span class="upload-icon">↑</span>
+
+                    <strong>Choose a document to upload</strong>
+
+                    <span>Drag and select your invoice file</span>
+
+                    <span class="file-formats">
+                        Supported formats: PDF and TXT
+                    </span>
+
+                    <input type="file"
+                           id="documentFile"
+                           accept=".pdf,.txt"
+                           required>
+
+                    <span id="fileName" class="file-name">
+                        No file selected
+                    </span>
+
+                </label>
+
+                <button type="submit" class="primary-btn">
+                    Analyze Document →
+                </button>
+
+            </form>
+
+            <div id="uploadResult" class="result-box"></div>
+
+        </section>
+
+
+        <!-- SEMANTIC SEARCH -->
+
+        <section id="search" class="panel">
+
+            <div class="panel-heading">
+                <div class="panel-icon search-panel-icon">⌕</div>
+
+                <div>
+                    <h2>Semantic Invoice Search</h2>
+                    <p class="subtitle">
+                        Search invoices using natural language and AI embeddings.
+                    </p>
+                </div>
+            </div>
+
+
+            <form id="searchForm" class="search-form">
+
+                <input
+                    id="searchQuery"
+                    type="text"
+                    placeholder="Example: Find invoices from XYZ Technologies"
+                    required
+                >
+
+                <button class="primary-btn" type="submit">
+                    Search
+                </button>
+
+            </form>
+
+            <div id="searchResults" class="result-box"></div>
+
+        </section>
+
+
+        <!-- AI ASSISTANT -->
+
+        <section id="ask" class="panel">
+
+            <div class="panel-heading">
+                <div class="panel-icon ai-panel-icon">✧</div>
+
+                <div>
+                    <h2>AI Document Assistant</h2>
+                    <p class="subtitle">
+                        Ask questions about your stored invoices and documents.
+                    </p>
+                </div>
+            </div>
+
+
+            <form id="askForm" class="search-form">
+
+                <input
+                    id="question"
+                    type="text"
+                    placeholder="Example: Which invoices were submitted by XYZ Technologies?"
+                    required
+                >
+
+                <button class="primary-btn" type="submit">
+                    Ask AI ✧
+                </button>
+
+            </form>
+
+            <div id="aiResult" class="result-box"></div>
+
+        </section>
+
+
+        <!-- ANOMALY DETECTION -->
+
+        <section id="anomalies" class="panel">
+
+            <div class="section-heading">
+
+                <div class="panel-heading">
+                    <div class="panel-icon anomaly-panel-icon">◈</div>
+
+                    <div>
+                        <h2>Anomaly Detection</h2>
+                        <p class="subtitle">
+                            Review unusual invoice records detected by machine learning.
+                        </p>
+                    </div>
+                </div>
+
+                <button id="anomalyButton" class="secondary-btn">
+                    Load Anomalies
+                </button>
+
+            </div>
+
+            <div id="anomalyResults" class="result-box"></div>
+
+        </section>
+
+
+        <footer>
+            <strong>DocuMind AI</strong>
+            <span>Intelligent Document Processing & Risk Detection</span>
+            <small>Built with FastAPI · MySQL · FAISS · Gemini AI</small>
+        </footer>
+
+    </main>
+
+
+    <script src="/static/script.js"></script>
+
+</body>
+</html>

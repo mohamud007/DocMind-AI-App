@@ -1,0 +1,23 @@
+
+invoice_number,vendor,total_amount,currency
+INV-001,ABC Supplies,10000,INR
+INV-002,ABC Supplies,12000,INR
+INV-003,XYZ Technologies,15000,INR
+INV-004,Global Traders,18000,INR
+INV-005,ABC Supplies,11000,INR
+INV-006,XYZ Technologies,14000,INR
+INV-007,Global Traders,20000,INR
+INV-008,ABC Supplies,9500,INR
+INV-009,XYZ Technologies,16000,INR
+INV-010,Global Traders,17500,INR
+INV-011,ABC Supplies,10500,INR
+INV-012,XYZ Technologies,13000,INR
+INV-013,Global Traders,19000,INR
+INV-014,ABC Supplies,11500,INR
+INV-015,XYZ Technologies,15500,INR
+INV-016,Global Traders,18500,INR
+INV-017,ABC Supplies,12500,INR
+INV-018,XYZ Technologies,14500,INR
+INV-019,Global Traders,21000,INR
+INV-020,ABC Supplies,500000,INR
+INV-021,XYZ Technologies,750000,INR

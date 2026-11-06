@@ -1,0 +1,13 @@
+
+fastapi
+uvicorn[standard]
+python-multipart
+pymupdf
+pandas
+scikit-learn
+sentence-transformers
+faiss-cpu
+python-dotenv
+sqlalchemy
+pymysql
+google-genai

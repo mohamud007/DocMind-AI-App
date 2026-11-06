@@ -4,6 +4,10 @@ DocuMind AI is an AI-powered document processing and risk detection platform des
 
 The application extracts important information from uploaded invoices, validates invoice data, detects duplicate records, compares invoices with purchase orders, identifies unusual transactions using machine learning, and provides intelligent document search and AI-powered question answering.
 
+## ScreenShot
+![Home](https://github.com/mohamud007/DocMind-AI-App/blob/main/Screenshot%202026-11-07%20041915.png)
+
+![](https://github.com/mohamud007/DocMind-AI-App/blob/main/Screenshot%202026-11-07%20041947.png)
 ## Features
 
 ### 1. Intelligent Document Processing
